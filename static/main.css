@@ -1,16 +1,107 @@
-    h1 {
-        display:flex;
-        align-items:center;
-        justify-content: center;
-    }
-    a#roll_button {
-        display:flex;
-        align-items:center;
-        justify-content: center;
-    }
-    .roll_result {
-        display:flex;
-        align-items:center;
-        justify-content: center;
-        margin:auto
-    }
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a#roll_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card {
+    position: relative;
+    justify-content: flex-end;
+
+    width: 400px;
+    height: 600px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+    box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 10%);
+}
+.card:hover {
+    box-shadow: 1px 1px 20px 2px rgb(0 0 0 / 15%);
+    transform: scale(1.02);
+}
+div.background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+img.background {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+.badge {
+    position: absolute;
+    top: -6px;
+    left: 24px;
+
+    filter: drop-shadow(1px 1px 10px rgb(0 0 0 / 10%));
+}
+.badge span {
+    background: gold;
+    padding: 0px 24px 6px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 75%, 50% 100%, 0% 75%);
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 96px;
+    font-weight: 900;
+    color: orange;
+    -webkit-text-stroke: 2px white;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 12px 0 24px;
+    margin-bottom: 32px;
+
+    backdrop-filter: brightness(0.6);
+    color: white;
+}
+.content > * {
+    margin: 0;
+}
+.content .name {
+    width: 100%;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xxx-large;
+    text-align: center;
+    color: white;
+}
+.content .description {
+    padding: 12px;
+}
+a.redirect {
+    width: fit-content;
+    align-self: flex-end;
+    margin-right: 12px;
+    
+    text-decoration: none;
+    color: white;
+}
+.redirect span {
+    background-image: linear-gradient(45deg, #4caf50, #009688);
+    padding: 6px 12px;
+    border-radius: 99px;
+}
