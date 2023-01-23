@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Webpage</title>
-    <link rel="stylesheet" href="static/main.css">
+    <title>Colton's Travel Gacha System</title>
+    <link rel="stylesheet" href="../static/main.css">
 </head>
-<body>
-
-    <h1>Colton's Travel Gacha System</h1>
-    <img src={{item.href}} class= roll_result>
-    <img src={{item.href2}} class= roll_result>
-    
-    <h2 class=roll_result>{{item.country}}</h2>
-    <h2 class=roll_result>{{item.tier}}</h2>
-    <a href= {{item.wikiVoyage}} class= roll_result>See WikiVoyage Article!</a>
-    <p class= roll_result>{{item.blurb}}</p>
-    {# a comment #}
+<body class="centered">
+    <div class="card centered">
+        <div class="background">
+            <img src={{item.href}} class="background"/>
+        </div>
+        <div class="badge">
+            <span>{{item.tier}}</span>
+        </div>
+        <div class="content">
+            <h1 class="name">{{item.country}}</h1>
+            <p class="description">{{item.blurb}}</p>
+            <a href={{item.wikiVoyage}} class="redirect" target="_blank" rel=”noreferrer”>
+                <span>Learn more</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
  
