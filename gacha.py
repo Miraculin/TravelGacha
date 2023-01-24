@@ -63,7 +63,8 @@ def generateResult(tier, country):
         "href": href,
         "tier": tier,
         "blurb": blurb,
-        "wikiVoyage": wikiVoyage_link
+        "wikiVoyage": wikiVoyage_link,
+        "tierClass": f'tier{tier if tier != "H" else "B"}',
     }
 
     return country_result

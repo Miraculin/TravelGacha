@@ -236,7 +236,7 @@ COUNTRY_TIER = {
         "Cameroon",
         "Madagascar",
     ],
-    "Stay Home": [
+    "H": [
         "Canada",
     ]
 }
@@ -248,7 +248,7 @@ TIER_PROBABILITY = {
     "B": 0.20, #0.5
     "C": 0.06, #0.14
     "D":0.05, # 0.01
-    "Stay Home": 0.00,
+    "H": 0.00,
 }
 
 COUNTRY_CATEGORIES = {
