@@ -20,6 +20,16 @@ body {
       background-position: bottom;
     }
 }
+@keyframes fade_in {
+    0% {
+        filter: brightness(1.8);
+        opacity: 0;
+    }
+    100% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+}
 
 /* Misc. */
 a#roll_button {
@@ -40,6 +50,10 @@ a#roll_button {
 
     transition: 0.2s;
     box-shadow: 1px 1px 20px 2px rgb(0 0 0 / 15%);
+
+    animation: fade_in ease-out 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 .card:hover {
     transform: scale(1.05);
@@ -70,7 +84,7 @@ img.background {
     top: -6px;
     left: 24px;
     min-width: 120px;
-    min-height: 130px;
+    height: 130px;
 
     filter: drop-shadow(1px 1px 10px rgb(0 0 0 / 10%));
 }
@@ -84,7 +98,7 @@ img.background {
 
     clip-path: polygon(10% 0%, 90% 0%, 100% 75%, 50% 100%, 0% 75%);
 }
-.tierS {
+.tierSS, .tierS {
     /* https://codepen.io/sooooooo/pen/zVOGmb */
     background-image: url(https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg);
     background-size: 500%;
@@ -96,6 +110,9 @@ img.background {
     animation-direction: alternate;
     animation-timing-function: linear;
     animation-name: fluid;
+}
+.tierS {
+    color: slategrey;
 }
 .tierA {
     background-image: linear-gradient(45deg, orange, gold);
