@@ -153,7 +153,7 @@ COUNTRY_TIER = {
         "Honduras",
         "Barbados",
         "Palestine",
-        "US Virgin Islands"
+        "U.S. Virgin Islands"
     ],
     "C": [
         "Gambia",

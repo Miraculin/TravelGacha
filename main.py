@@ -3,8 +3,8 @@ import gacha
 from flask import Flask
 from flask import render_template
 from flask import url_for
-
-import json
+import os
+from flask import send_from_directory
 
 app = Flask(__name__)
 
@@ -22,8 +22,15 @@ def roll():
 @app.route("/debug/<country>")
 def debug(country):
     country_result = gacha.find_country(country)
+    if country_result != None:
+        if country_result['href'].startswith("custom") or country_result['href'].startswith("cache"):
+            country_result['href'] = url_for(country_result['href'].split(os.sep)[0], filename=country_result['href'].split(os.sep)[1])
     return render_template('roll.html.j2', item=country_result)
         
-# if __name__ == "__main__":
-#     for k in constants.TIER_PROBABILITY.keys():
-#         print(k)
+@app.route('/cache/<path:filename>')
+def cache(filename):
+    return send_from_directory(app.root_path + '/cache/', filename)
+
+@app.route('/custom/<path:filename>')
+def custom(filename):
+    return send_from_directory(app.root_path + '/custom/', filename)
