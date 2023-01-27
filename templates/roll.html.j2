@@ -29,13 +29,13 @@
         <div id="history"></div>
     </div>
 </body>
-<script type="text/javascript" src="rollHistory.js"></script>
+<script type="text/javascript" src="/static/rollHistory.js"></script>
 <script type="text/javascript">
     RollHistory.render();
     const roll = new Roll(
-        {{item.country}},
-        {{item.href}},
-        {{item.wikiVoyage}},
+        "{{item.country}}",
+        "{{item.href}}",
+        "{{item.wikiVoyage}}",
     );
     RollHistory.add(roll);
 </script>
