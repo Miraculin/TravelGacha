@@ -1,5 +1,12 @@
 body {
+    background-image: url(assets/cloud-background.png);
+    background-repeat: repeat;
     backdrop-filter: brightness(1.4);
+
+    animation-name: scrollX;
+    animation-timing-function: linear;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
 }
 
 .clouds_overlay {
