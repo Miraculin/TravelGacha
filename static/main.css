@@ -1,5 +1,13 @@
 body {
-    background: linear-gradient(0deg, powderblue, lavender);
+    backdrop-filter: brightness(1.4);
+}
+
+.clouds_overlay {
+    position: relative;
+}
+.cloud {
+    position: absolute;
+    z-index: -10;
 }
 
 /* https://codepen.io/sooooooo/pen/zVOGmb */
@@ -19,9 +27,10 @@ h1.title {
     -webkit-text-fill-color: transparent;
     
     animation-name: fluid;
-    animation-duration: 10s;
     animation-timing-function: linear;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 h1.title:before{
     position: absolute;
@@ -39,11 +48,11 @@ a#roll_button {
     justify-content: center;
 }
 a#roll_button img {
-    width: 144px;
+    width: 180px;
     height: auto;
 
     animation: pulse ease-out 1s infinite alternate;
 }
 a#roll_button img:hover {
-    animation: spin ease-in-out 2s infinite alternate;
+    animation: spin linear 1s infinite;
 }

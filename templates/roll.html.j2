@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Colton's Travel Gacha System</title>
+    <title>colton's travel gacha system | {{item.country}}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Modak&family=Sarina&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/static/common.css">
     <link rel="stylesheet" href="/static/roll.css">
 </head>
 <body class="centered">
-    <div class="card centered">
-        <div class="background">
-            <img src={{item.href}} class="background"/>
+    <div class="container">
+        <div class="card centered">
+            <div class="background">
+                <img src={{item.href}} class="background"/>
+            </div>
+            <div class="badge_wrapper">
+                <div class="badge centered no_select {{item.tierClass}}">{{item.tier}}</div>
+            </div>
+            <div class="content">
+                <h1 class="name">{{item.country}}</h1>
+                <p class="blurb">{{item.blurb}}</p>
+                <a href={{item.wikiVoyage}} class="redirect" target="_blank" rel="noreferrer">Learn more</a>
+            </div>
         </div>
-        <div class="badge_wrapper">
-            <div class="badge centered no_select {{item.tierClass}}">{{item.tier}}</div>
-        </div>
-        <div class="content">
-            <h1 class="name">{{item.country}}</h1>
-            <p class="blurb">{{item.blurb}}</p>
-            <a href={{item.wikiVoyage}} class="redirect" target="_blank" rel="noreferrer">Learn more</a>
-        </div>
+
+        <div id="history"></div>
     </div>
 </body>
+<script type="text/javascript" src="rollHistory.js"></script>
+<script type="text/javascript">
+    RollHistory.render();
+    const roll = new Roll(
+        {{item.country}},
+        {{item.href}},
+        {{item.wikiVoyage}},
+    );
+    RollHistory.add(roll);
+</script>
 </html>
  
