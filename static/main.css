@@ -1,157 +1,65 @@
 body {
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    background: lightslategrey;
+    background-image: url(assets/cloud-background.png);
+    background-repeat: repeat;
+    backdrop-filter: brightness(1.4);
 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-@keyframes fluid {
-    from {
-      background-position: top;
-    }
-    to {
-      background-position: bottom;
-    }
+    animation-name: scrollX;
+    animation-timing-function: linear;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
 }
 
-/* Misc. */
+.clouds_overlay {
+    position: relative;
+}
+.cloud {
+    position: absolute;
+    z-index: -10;
+}
+
+/* https://codepen.io/sooooooo/pen/zVOGmb */
+h1.title {
+    margin: 0 0 32px;
+    color: black;
+
+    font-family: 'Modak', cursive;
+    font-weight: normal;
+    font-size: 8.5em;
+    text-align: center;
+    line-height: .9em;
+
+    background-image: url(assets/holographic.webp);
+    background-size: 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation-name: fluid;
+    animation-timing-function: linear;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+h1.title:before{
+    position: absolute;
+    display: inline;
+    z-index: -1;
+    left: 0;
+
+    text-shadow: 4px 2px 1px #40adff, 2px 2px 10px #f4b0e7;    
+    content: "colton's travel gacha system";
+}
+
 a#roll_button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+a#roll_button img {
+    width: 180px;
+    height: auto;
 
-/* Card component */
-.card {
-    position: relative;
-    justify-content: flex-end;
-
-    width: 400px;
-    height: 600px;
-
-    border-radius: 12px;
-
-    transition: 0.2s;
-    box-shadow: 1px 1px 20px 2px rgb(0 0 0 / 15%);
+    animation: pulse ease-out 1s infinite alternate;
 }
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Image of travel destination */
-div.background {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 12px;
-    overflow: hidden;
-}
-img.background {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-/* Tier badge */
-.badge_wrapper {
-    position: absolute;
-    top: -6px;
-    left: 24px;
-    min-width: 120px;
-    min-height: 130px;
-
-    filter: drop-shadow(1px 1px 10px rgb(0 0 0 / 10%));
-}
-.badge {
-    height: 100%;
-    justify-content: flex-start;
-
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 96px;
-    font-weight: 900;
-
-    clip-path: polygon(10% 0%, 90% 0%, 100% 75%, 50% 100%, 0% 75%);
-}
-.tierS {
-    /* https://codepen.io/sooooooo/pen/zVOGmb */
-    background-image: url(https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg);
-    background-size: 500%;
-    color: hotpink;
-    -webkit-text-stroke: 2px white;
-    
-    animation-duration: 45s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    animation-name: fluid;
-}
-.tierA {
-    background-image: linear-gradient(45deg, orange, gold);
-    color: darkorange;
-    -webkit-text-stroke: 2px white;
-}
-.tierB {
-    background-image: linear-gradient(45deg, slategrey, silver);
-    color: slategrey;
-    -webkit-text-stroke: 2px white;
-}
-.tierC {
-    background-image: linear-gradient(45deg, saddlebrown, sandybrown);
-    color: saddlebrown;
-    -webkit-text-stroke: 2px white;
-}
-
-/* Contents of the card */
-.content {
-    display: flex;
-    flex-direction: column;
-
-    padding: 18px;
-    margin-bottom: 32px;
-
-    backdrop-filter: brightness(0.6);
-    color: white;
-}
-.content > * {
-    margin: 0;
-}
-.content > :not(:last-child) {
-    margin-bottom: 6px;
-}
-.content .name {
-    width: 100%;
-
-    font-family: 'Times New Roman', Times, serif;
-    font-size: xxx-large;
-    text-align: center;
-    color: white;
-}
-.content .blurb {}
-a.redirect {
-    width: fit-content;
-    align-self: flex-end;
-    
-    text-decoration: none;
-    color: white;
-
-    background-image: linear-gradient(45deg, #4caf50, #009688);
-    padding: 6px 12px;
-    border-radius: 99px;
-
-    transition: 0.2s;
-}
-a.redirect:hover {
-    filter: brightness(1.15);
+a#roll_button img:hover {
+    animation: spin linear 1s infinite;
 }

@@ -1,0 +1,198 @@
+/* Page formatting */
+.container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+.result {
+    flex-grow: 1;
+}
+
+/* Back button */
+a.back {
+    width: fit-content;
+    padding: 6px 36px 6px 36px;
+    margin-top: 12px;
+    margin-left: -12px;
+
+    background: white;
+    border-radius: 0 99px 99px 0;
+    color: lightslategrey;
+
+    text-decoration: none;
+    font-size: 42px;
+
+    transition: 0.2s;
+}
+a.back:hover {
+    margin-left: 0;
+}
+
+/* Card component */
+.card {
+    position: relative;
+    justify-content: flex-end;
+
+    width: 400px;
+    height: 600px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+    box-shadow: 1px 1px 20px 2px rgb(0 0 0 / 15%);
+
+    animation: fade_in ease-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Image of travel destination */
+div.background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+img.background {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* Tier badge */
+.badge_wrapper {
+    position: absolute;
+    top: -6px;
+    left: 24px;
+    min-width: 120px;
+    height: 130px;
+
+    filter: drop-shadow(1px 1px 10px rgb(0 0 0 / 10%));
+}
+.badge {
+    height: 100%;
+    justify-content: flex-start;
+
+    font-family: 'DM Serif Display', serif;
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 102px;
+
+    clip-path: polygon(10% 0%, 90% 0%, 100% 75%, 50% 100%, 0% 75%);
+}
+.tierSS, .tierS {
+    background-image: url(assets/holographic.webp);
+    background-size: 500%;
+    color: hotpink;
+    -webkit-text-stroke: 2px white;
+    
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-name: fluid;
+}
+.tierS {
+    color: slategrey;
+}
+.tierA {
+    background-image: linear-gradient(45deg, orange, gold);
+    color: darkorange;
+    -webkit-text-stroke: 2px white;
+}
+.tierB {
+    background-image: linear-gradient(45deg, slategrey, silver);
+    color: slategrey;
+    -webkit-text-stroke: 2px white;
+}
+.tierC {
+    background-image: linear-gradient(45deg, saddlebrown, sandybrown);
+    color: saddlebrown;
+    -webkit-text-stroke: 2px white;
+}
+
+/* Contents of the card */
+.content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px;
+    margin-bottom: 32px;
+
+    backdrop-filter: brightness(0.6);
+    color: white;
+}
+.content > * {
+    margin: 0;
+}
+.content > :not(:last-child) {
+    margin-bottom: 6px;
+}
+.blurb {
+    font-size: 18px;
+}
+.name {
+    width: 100%;
+    color: white;
+
+    font-family: 'Sarina', cursive;
+    font-size: 4em;
+    font-weight: normal;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+a.redirect {
+    width: fit-content;
+    align-self: flex-end;
+    
+    text-decoration: none;
+    color: white;
+
+    background-image: linear-gradient(45deg, #4caf50, #009688);
+    padding: 6px 12px;
+    border-radius: 99px;
+
+    transition: 0.2s;
+}
+a.redirect:hover {
+    filter: brightness(1.15);
+}
+
+/* History */
+#history {
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0;
+}
+#history > *:not(:last-child) {
+    margin-right: 24px;
+}
+#history a {
+    color: white;
+    text-decoration: none;
+}
+#history .card {
+    justify-content: center;
+    width: 100px;
+    height: 150px;
+
+    background: white;
+    background-size: cover;
+    background-position: center;
+
+    animation: none;
+}
+#history .card .name {
+    font-size: 18px;
+}
