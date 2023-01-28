@@ -251,6 +251,7 @@ TIER_PROBABILITY = {
     "C": 0.06, #0.14
     "D":0.05, # 0.01
     "H": 0.00,
+    "F": 0.00,
 }
 
 COUNTRY_CATEGORIES = {
