@@ -37,7 +37,6 @@ COUNTRY_TIER = {
         "Greece",
         "Malaysia",
         "Portugal",
-        "Russia",
         "Hong Kong",
         "Austria",
         "UAE",
@@ -238,6 +237,9 @@ COUNTRY_TIER = {
     ],
     "H": [
         "Canada",
+    ],
+    "F": [
+        "Russia"
     ]
 }
 
